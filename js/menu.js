@@ -28,19 +28,9 @@ $(document).ready(function () {
       'eta' : 21,
     },
   ];
-  var source = $("#entry-template").html();
-  var template = Handlebars.compile(source);
 
   for (var i = 0; i < studenti.length; i++){
     console.log(studenti[i].nome + " " + studenti[i].cognome);
-
-    var context = {
-      'nome' : studenti[i].nome,
-      'cognome' : studenti[i].cognome,
-      'eta' : studenti[i].eta,
-    }
-    var html = template(context);
-    $(".student").append(html);
   }
 
 
@@ -52,7 +42,21 @@ $(document).ready(function () {
   }
   studenti.push(nuovoOggetto);
 
+
+  var source = $("#entry-template").html();
+  var template = Handlebars.compile(source);
+
   for (var i = 0; i < studenti.length; i++){
+
+    var context = {
+      'nome' : studenti[i].nome,
+      'cognome' : studenti[i].cognome,
+      'eta' : studenti[i].eta,
+    }
+    
+    var html = template(context);
+    $(".student").append(html);
+
     for(var j in studenti[i]){
       console.log(j + ":" + " " + studenti[i][j]);
     }
