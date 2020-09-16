@@ -9,16 +9,14 @@
   <title>Oggetti Studenti</title>
 </head>
 <body>
-  <div class="student"></div>
-
-  <div class="students"></div>
+  <ul class="student"></ul>
 
   <script id="entry-template" type="text/x-handlebars-template">
-    <div class="entry">
-      <p>{{nome}}</p>
-      <p class="body">{{cognome}}</p>
-      <p class="body">{{eta}}</p>
-    </div>
+    <li class="entry">
+      <h2>Nome : {{nome}}</h2>
+      <h2 class="body"> Cognome : {{cognome}}</h2>
+      <h2 class="body">Età : {{eta}} anni</h2>
+    </li>
   </script>
 
 <script type="text/javascript" src="js/menu.js"></script>
